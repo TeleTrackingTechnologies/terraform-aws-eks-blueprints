@@ -1,10 +1,5 @@
 # https://github.com/kubernetes-sigs/aws-load-balancer-controller/blob/main/docs/install/iam_policy.json
-data "aws_iam_policy_document" "aws_load_balancer_controller" {
-  count = var.enable_aws_load_balancer_controller ? 1 : 0
-
-  source_policy_documents   = lookup(var.aws_load_balancer_controller, "source_policy_documents", [])
-  override_policy_documents = lookup(var.aws_load_balancer_controller, "override_policy_documents", [])
-
+data "aws_iam_policy_document" "aws_lb" {
   statement {
     actions   = ["iam:CreateServiceLinkedRole"]
     resources = ["*"]

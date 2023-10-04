@@ -17,6 +17,7 @@ variable "addon_context" {
     aws_caller_identity_arn        = string
     aws_eks_cluster_endpoint       = string
     aws_partition_id               = string
+    aws_partition_dns_suffix       = string
     aws_region_name                = string
     eks_cluster_id                 = string
     eks_oidc_issuer_url            = string
